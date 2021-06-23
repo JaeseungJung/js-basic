@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script>
+        //Object 오브젝트
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 40,
+            tel: "01033394495",
+            email: "doedoe@naver.com"
+        };
+
+        let person2 = {
+            firstName: "Jake",
+            lastName: "Smith",
+            age: 45,
+            tel: "01033394487",
+            email: "jake@naver.com"
+        }
+
+        // console.log(person.firstName, person.lastName)
+        // console.log(person.age)
+
+        // person.age = "41"
+        // console.log(person.age)
+
+        console.log(person["firstName"]);
+
+
+        let firstNameKey = "firstName";
+        let lastNameKey = "lastName";
+
+
+        console.log(person.firstNameKey); // () Undefined : 출력되지 않음. person에 해당 키가 없기 때문에.
+        console.log(person[firstNameKey]); // [] firstname 키의 밸류를 호출함. 변수는 대괄호에 넣음..l
+
+        console.log(person.lastNameKey)
+        console.log(person.lastName)
+        console.log(person[lastNameKey])
+
+        console.log(person2.firstNameKey)
+        console.log(person2.firstName)
+        console.log(person2[firstNameKey])
+    </script>
+</body>
+
+</html>
