@@ -15,6 +15,10 @@
             email: "doedoe@naver.com"
         };
 
+        person.firstName = "John"
+
+        // console.log("John")
+
         let person2 = {
             firstName: "Jake",
             lastName: "Smith",
@@ -29,21 +33,23 @@
         // person.age = "41"
         // console.log(person.age)
 
-        console.log(person["firstName"]);
 
 
         let firstNameKey = "firstName";
         let lastNameKey = "lastName";
 
+        console.log(person["firstName"]);
 
         console.log(person.firstNameKey); // () Undefined : 출력되지 않음. person에 해당 키가 없기 때문에.
-        console.log(person[firstNameKey]); // [] firstname 키의 밸류를 호출함. 변수는 대괄호에 넣음..l
+        console.log(person.firstName)
+        console.log(person[firstNameKey]); // [] firstname 키의 밸류를 호출함. 변수는 대괄호에 넣음.
 
-        console.log(person.lastNameKey)
+
+        console.log(person.lastNameKey) // () Undefined : 출력되지 않음.
         console.log(person.lastName)
         console.log(person[lastNameKey])
 
-        console.log(person2.firstNameKey)
+        console.log(person2.firstNameKey) // () Undefined : 출력되지 않음.
         console.log(person2.firstName)
         console.log(person2[firstNameKey])
     </script>
