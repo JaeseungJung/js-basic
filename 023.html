@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            firstName: "John",
+            lastName: "Doe",
+            getFullName: function () {
+                return this.firstName + "" + this.lastName;
+            }
+        }
+
+        var person = {};
+
+
+        // 다른 방법
+        // var person = new Object();
+        // person.firstName = "John"
+        // person.lastName = "Doe"
+        // person.getFullName = function () {
+        //     return this.firstName + "" + this.lastName;
+        // }
+
+
+        // 이러케 해두댐 추가.
+        // person.getFullName: function () {
+        //         return this.firstName + "" + this.lastName;
+        //     }
+
+        console.log(person.getFullName())
+    </script>
+</body>
+
+</html>

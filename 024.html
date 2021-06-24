@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script String 객체</title>
+</head>
+
+<body>
+    <script>
+        // var txt = "abcdefghijklmnopqrstuvwxyz";
+        // console.log(txt.length); // .length 문자열 길이 측정
+
+        // var txt = "Please locate where locate occur";
+        // console.log(txt.indexOf("locate")) // .indexOf("") 문자열이 몇번째에 있는지. 없으면 "-1"
+
+
+
+        // if (txt.indexOf("locate") > -1) {
+
+        // } // 내가 찾는 문자가 있냐 없냐
+
+        // var tel = "010-3345-9910"
+        // if (tel.indexOf("-") > -1) {
+        //     console.log("")
+
+        // }
+
+
+
+        // if (txt.lastIndexOf("locate") > -1) {
+
+        // }
+
+        // //slice - 두개의 파라미터. 첫번째 - 시작인덱스번호, 두번째 - 종료인덱스번호
+        // var text = "Apple, Banana, Kiwi";
+        // console.log(text.slice(7, 13));
+        // console.log(text.slice(7));
+        // console.log(text.slice(-12)); //-일 경우 뒤에서 부터 셈.
+
+        // var txt = "9904121";
+        // console.log(txt.slice(-1));
+
+        // /substtring
+
+        // //substr = 첫번째 - 시작인덴스번호 , 두번째 - 잘래낼거 길이
+
+        // var date = "20210624"; // 2021-06-04
+        // var year = date.substr(0, 4);
+        // var month = date.substr(5, 2);
+        // var day = date.slice(-2);
+
+        // console.log(year + "-" + month + "-" + day);
+
+        // //Replace
+        // // console.log(date.replace(".", "-"));
+
+        // console.log(date.replace(/\./g, "-"));
+
+        // //toUpperCase() - 대문자화
+        // var txt = "Hello World";
+        // console.log(txt.toUpperCase());
+
+        // //toLowerCase() - 소문자화
+        // console.log(txt.toLowerCase());
+
+        //concat(); - 문자열을 더해줌
+        // +
+        // var text1 = "Hello";
+        // var text2 = "World";
+        // console.log(text1.concat(" ", text2));
+
+        //trim() 앞뒤 공백 지우기
+        // var text = "   Hello  World       ";
+        // console.log(text);
+        // console.log(text.trim());
+
+        //padStart() 첫번째 - 문자열의 총길이, 두번째 - 뭘로 채울래?
+        //Ex 날짜로 반환 / 학번 만들기 202101515
+        // var txt09 = "5";
+        // console.log(txt09.padStart(2, 0));
+
+
+        // function fillChar(str, len, s) {
+        //     while (str.length < len) {
+        //         str = s + str;
+        //     }
+        //     return str;
+        // }
+
+        // console.log(fillChar("9", 4, 0));
+        // //0009 4자리가 될때까지 0을 계속 앞에 추가함.
+
+
+
+        //padEnd 뒤에 추가함. // 5000이 됨.
+        // var txt010 = "5";
+        // console.log(txt010.padEnd(4, 0));
+
+        // padEnd와 동일한 while 구문.
+        // function fillChar(str, len, s) {
+        //     while (str.length < len) {
+        //         str = str + s;
+        //     }
+        //     return str;
+        // }
+
+        // console.log(fillChar("5", 4, 0));
+    </script>
+</body>
+
+</html>
