@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+    <script>
+        //문제1. userList 데이터에서 gender가 male인 사람만 
+        // 새 배열 maleUserList에 담고 console창에 출력하세용.
+
+        var maleUserList = [];
+        for (var user of userList) {
+            if (user.gender == "male") {
+                maleUserList.push(user);
+            }
+        }
+
+        console.table(maleUserList);
+
+
+
+        // 응용. 여성 유저만 뽑아오기.
+        var femaleUserList = [];
+        for (var user of userList) {
+            if (user.gender == "female") {
+                femaleUserList.push(user);
+            }
+        }
+
+        console.table(femaleUserList);
+
+
+
+        // youngGroup에 나이가 30이하인 사람 넣기.
+        var youngGroup = [];
+        for (var user of userList) {
+            if (user.age <= 30) {
+                youngGroup.push(user);
+            }
+        }
+
+        console.table(youngGroup);
+
+
+        //oldGroup에 나이가 30 초과인 사람 넣기.
+
+        // var oldGroup = [];
+        // for (var i = 0; i < userList.length; i++) {
+        //     if (user.age > 30) {
+        //         oldGroup.push(user);
+        //     }
+        // }
+
+        // console.table(oldGroup);
+
+
+
+
+        // console.table(userList.filter(u == > u.gender == "male"));
+        //나중에 배우면 이렇게 한줄로 끝남.
+    </script>
+
+</body>
+
+</html>

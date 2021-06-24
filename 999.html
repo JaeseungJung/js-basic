@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script 공 굴리기 css test</title>
+
+    <style>
+        $s: 50vw;
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: #230943;
+        }
+
+        .thing {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 5px;
+            border: 10px solid transparent;
+            border-color: #FFAC2F #F725EF #25EAF7 #79FF39;
+            border-radius: 25%;
+            animation: thing 10s cubic-bezier(0.35, -0.14, 0.79, 1.22) infinite;
+        }
+
+        @keyframes thing {
+            100% {
+                transform: rotateZ(1turn);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+
+
+    </script>
+
+    <div class=thing></div>
+</body>
+
+</html>

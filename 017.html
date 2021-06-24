@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script 반복문</title>
+</head>
+
+<body>
+    <script>
+        // 반복문 for-loop
+        var brands = ["애플", "구글", "페이스북", "아마존", "삼성", "LG"]
+        brands.push("신세계")
+        brands.push("카카오")
+
+        for (var index in brands) {
+            console.log(brands[index])
+        }
+
+
+
+
+
+        //for-loop
+        // for(코드1; 조건2; 코드2) {
+        //     //코드블록
+        // }
+
+        for (var i = 0; i < brands.length; i++) {
+            console.log(brands[i]) //애플,구글,페이스북,아마존,삼성 ...
+        }
+        // .length; 는 배열의 개수를 불러옴
+        //
+        //var i = 0
+        //for (; i < brands.length; i++) 
+        // 이렇게 써도 됨.
+
+        //var length = brands.length;
+        // for (var i = 0; i < length; i++) {
+        //     console.log(brands[i])} 
+        // 이 방법이 더 효율적입니다. // 호출 횟수를 줄여줌.
+
+
+        //for-in
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 40,
+            tel: "01033394495",
+            email: "doedoe@naver.com"
+        };
+
+        for (var key in person) {
+            // console.log(key);
+            console.log(person[key]);
+        }
+
+
+        //for-of
+        for (var brand of brands) {
+            console.log(brand)
+        }
+
+        var lang = "JavaScript"
+        for (var c of lang) {
+            console.log(c)
+        }
+    </script>
+</body>
+
+</html>
