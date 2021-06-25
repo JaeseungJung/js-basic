@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+
+    <script>
+        // 문제6. 사용자 리스트에서 gender, age를 받는 함수 생성.
+        // 나이 총합 // 나이 평균 // 가장나이 많은 사람 // 가장 나이 낮은 사람 
+        // 나이총합 - getUserAgeSum
+        // 나이평균 - getUserAgeAvg
+        // 나이제일많은나이 - getUserAgeMax
+        // 나이제일적은나이 - getUserAgeMin
+
+        // 함수명 getUserList
+        // 파라미터명 gender, age
+        // return outputUserList
+        // 호출 getUserList("male",age)
+        // 호출 getUserList("female",age)\
+        // 2가지 조건이 일치 - &&
+        // or - ||
+
+
+        //나의 오답
+        // function getUserAgeSum(age) {
+        //     let outputUserList = [];
+        //     for (var i = 0; i < age.length; i++) {
+        //         str = str + i;
+        //     }
+        // }
+        // return str;
+        // }
+
+
+
+        // function getUserAgeAvg(age) {
+        //     let outputUserList = [];
+        //     for (var i = 0; i < age.length; i++) {
+        //         str = str + i;
+        //     }
+        // }
+        // return str;
+        // }
+
+
+        // function getUserAgeMax(age) {
+        //     let outputUserList = [];
+        //     for (var i = 0; i < age.length; i++) {
+        //         str = str + i;
+        //     }
+        // }
+        // return str;
+        // }
+
+
+        // function getUserAgeMin(age) {
+        //     let outputUserList = [];
+        //     for (var i = 0; i < age.length; i++) {
+        //         str = str + i;
+        //     }
+        // }
+        // return str;
+        // }
+
+
+
+        //선생님 해답
+
+        function getUserAgeMath() {
+            let sum = 0;
+            let maxAge = 0; // Number.MIN_SAFE_INTEGER;
+            let minAge = Number.MAX_SAFE_INTEGER;
+
+            for (var user of userList) {
+                sum += user.age;
+
+                if (user.age > maxAge) {
+                    maxAge = user.age;
+                }
+
+                if (user.age < minAge) {
+                    minAge = user.age;
+                }
+            }
+
+            let avg = sum / userList.length;
+
+            return {
+                "sum": sum,
+                "avg": avg,
+                "maxAge": maxAge,
+                "minAge": minAge
+            }
+        }
+
+        let userMath = getUserAgeMath();
+        console.table(userMath);
+    </script>
+</body>
+
+</html>

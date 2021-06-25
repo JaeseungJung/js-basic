@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script Number 객체 함수</title>
+</head>
+
+<body>
+    <script>
+        var x01 = 123;
+        x01.toString();
+        //x +    "";
+        console.log(x01)
+
+        //toExponential(); 지수표기법으로 변환
+
+        //toFixed() - 소숫점 몇자리 까지 보여줄꺼야?
+        var x02 = 9.656;
+        console.log(x02.toFixed(0));
+
+        //toPrecision() - 정수+소수 합쳐서 몇자리까지 보여줄까여?
+        console.log(x02.toPrecision(3));
+
+        //parseInt() - 문자를 숫자로 바꿈 정수형만 다룸.
+        var x03 = "101";
+        console.log(parseInt(x03));
+        var x04 = "10.2433333";
+        console.log(parseInt(x04)); // 소수점 버리고 정수만 남김. 10.
+        console.log(parseInt("77 50 90 1000")); // 첫번째 숫자만 가져옴.
+        console.log(parseInt("900 years"));
+        console.log(parseInt("years 900 ")); // NaN = Not a Number
+
+        //parseFloat() - 문자열을 소수점을 포함하는 숫자로 변환
+        console.log(parseFloat(x04));
+
+        console.log(Number.MAX_VALUE); // - MAX_VALUE > MAX_SAFE_INTEGER
+        console.log(Number.MAX_SAFE_INTEGER);
+        console.log(Number.MIN_VALUE);
+        console.log(Number.MIN_SAFE_INTEGER);
+        console.log(Number.POSITIVE_INFINITY);
+        console.log(Number.NEGATIVE_INFINITY);
+
+
+
+        console.log(3 / 0); // Infinity 
+    </script>
+</body>
+
+</html>

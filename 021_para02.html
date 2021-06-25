@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+
+    <script>
+        // 문제5. 사용자 리스트에서 gender, age를 받는 함수 생성.
+        // 함수명 getUserList
+        // 파라미터명 gender, age
+        // return outputUserList
+        // 호출 getUserList("male",age)
+        // 호출 getUserList("female",age)\
+        // 2가지 조건이 일치 - &&
+        // or - ||
+
+        // function getUserList(gender, age) {
+        //     let outputUserList = [];
+        //     for (let user of userList) {
+        //         if (user.gender == gender && user.age == age) {
+        //             outputUserList.push(user);
+        //         }
+        //     }
+        //     return outputUserList;
+        // }
+
+        // let output = getUserList("male", 30);
+        // console.table(output);
+
+
+        // 3가지 패러미터
+
+
+        // function getUserList(gender, fromAge, toAge) {
+        //     let outputUserList = [];
+        //     for (let user of userList) {
+        //         if (user.gender == gender && (user.age >= fromAge && user.age <= toAge)) {
+        //             outputUserList.push(user);
+        //         }
+        //     }
+        //     return outputUserList;
+        // }
+
+        // let output = getUserList("male", 25, 30);
+        // console.table(output);
+
+
+
+
+        // || or
+        function getUserList(gender, fromAge, toAge) {
+            let outputUserList = [];
+            for (let user of userList) {
+                if (user.gender == gender || (user.age >= fromAge user.age <= toAge)) {
+                    outputUserList.push(user);
+                }
+            }
+            return outputUserList;
+        }
+
+        let output = getUserList("male", 25, 30);
+        console.table(output);
+    </script>
+</body>
+
+</html>

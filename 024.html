@@ -92,8 +92,8 @@
 
 
         //padEnd 뒤에 추가함. // 5000이 됨.
-        // var txt010 = "5";
-        // console.log(txt010.padEnd(4, 0));
+        var txt010 = "5";
+        console.log(txt010.padEnd(4, 0));
 
         // padEnd와 동일한 while 구문.
         // function fillChar(str, len, s) {
@@ -104,6 +104,37 @@
         // }
 
         // console.log(fillChar("5", 4, 0));
+
+
+
+        //charAt() - ()번째 글자를 가져옴
+        var txt011 = "Hello World"
+        console.log(txt011.charAt(0))
+
+        //charCodeAt()
+        console.log(txt011.charCodeAt(0))
+
+        //split()
+        // #자주 쓰는 유용한 함수
+        //2021-06-25 - "문자열이나 기호 등"를 기준으로 잘라냄
+        var date = "2021-06-25";
+        var arr = date.split("-");
+        console.table(arr);
+
+        var tag = "#불금#한국경제# #블록체인";
+        console.table(tag.split("#"));
+
+        //배열 join "문자열"을 넣어서 합칠래. 꼽싸리 같은거임.
+        console.log(arr.join("띄고"))
+
+        //startsWith()
+        var url01 = "http://naver.com";
+
+        if (url01.startsWith("http://") || url01.startsWith("https://")) {}
+
+        //endsWith()
+        var imageFile = "logo.jpg";
+        if (imageFile.endsWith(".jpg") || imageFile.endsWith(".png"))
     </script>
 </body>
 

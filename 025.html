@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script>
+        //문제. 배열안에 배열. for-loop
+        함수
+        함수명 - printArray
+        파라미터 - 배열
+        출력 - console.log
+
+        var arr = [
+            [1, 2, 3, 4, 5],
+            [3, 12, 33, 54, 15, 19],
+            [6, 9, 1, 40, 22],
+            [8, 19, 10, 5, 9],
+            [5, 28, 100, 55, 90],
+        ];
+
+        function printArray(arr2D) {
+            let leh1 = arr2D.length; //6
+
+            for (var i = 0; i < length; i++) {
+                //arr2D[i] // [1,2,3,4,5]
+                let arr1 = arr2D[i] //arr2D[0] //[1,2,3,4,5]
+                //arr2D[1] // [3, 12, 33, 54, 15, 19]
+
+                let len2 = arr1.length; //6
+
+                for (let j = 0; j < len2; j++) {
+                    // arr2D[i][j]
+                    // [1,2,3,4,5][0]
+                    console.log(arr2D[i][j]);
+                }
+
+
+            }
+
+            console.log(printArray(arr2D))
+    </script>
+</body>
+
+</html>

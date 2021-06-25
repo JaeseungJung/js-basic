@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script src="user_data.js"></script>
+    <script>
+        var ageList = [];
+        for (var user of userList) {
+            ageList.push(user.age);
+
+        }
+        console.table(ageList);
+
+        var output = ageList.filter(function (p) {
+            //배열을 따로 선언하지 않아도 됩니다. filter 안에서 배열을 임시로 만들어 저장하고 있어요.
+            return p > 20;
+        });
+
+        console.table(output)
+
+
+
+        /////
+
+
+        var output02 = userList.filter(function (user) {
+            //배열을 따로 선언하지 않아도 됩니다. filter 안에서 배열을 임시로 만들어 저장하고 있어요.
+            return user.gender == "male" && (user.age >= 35);
+        });
+
+        console.table(output02)
+    </script>
+</body>
+
+</html>
