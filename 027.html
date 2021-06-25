@@ -96,7 +96,28 @@
         // 029.html 실습. userList 활용
 
 
-        //map()
+        //map() 
+        //필요한 키만 가져옴 => 데이터 절약 => 최적화 속도 개선. node.js에서 자주 사용됨
+        // userList02.map(function (user)) {
+        //     return {
+        //         "firstName": user.firstName,
+        //         "lastName": user.lastName,
+        //         "email": user.email,
+        //         "fullName": user.firstName + user.lastName
+        //     }
+        // };
+
+
+
+
+        //reduce() 값을 더함.
+        var points = [34, 12, 5, 99, 1, 17];
+
+        var total = points.reduce(function (sum, currentValue) {
+            return sum + currentValue;
+        });
+
+        console.log("total", total)
     </script>
 </body>
 
