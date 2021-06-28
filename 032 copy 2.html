@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2202C847545F45BC25
+    <script>
+        // 주차 요금 계산.
+        // 평일만
+        // 패러미터
+        // 상품구매금액 / 내야할 주차요금
+        //함수명 calParkingCost(주차시간,총구매금액)
+        //new Date()
+        //get day
+        // var parkingCost = {}
+
+
+        // function calParkingCost(parkingTime, receiptCost) {
+        //     var parkingCost = {};
+        //     if (parkingTime <= 30 && receiptCost < 50000) {
+        //         return {
+        //             parkingCost = 2000
+        //         };
+        //     } else if (parkingTime <= 60 && receiptCost >= 50000) {
+        //         return {
+        //             parkingCost = 0
+        //         };
+        //     } else if (parkingTime <= 120 && receiptCost >= 100000) {
+        //         return {
+        //             parkingCost = 0
+        //         };
+        //     } else if (parkingTime <= 180 && receiptCost >= 150000) {
+        //         return {
+        //             parkingCost = 0
+        //         }; //////
+        //     } else if (parkingTime > 60 && receiptCost > 50000) {
+        //         return {
+        //             parkingCost = 2000 + ((parkingTime - 30) * 1000 / 60)
+        //         };
+        //     } else if (parkingTime > 120 && receiptCost > 100000) {
+        //         return {
+        //             parkingCost = 2000 + ((parkingTime - 30) * 1000 / 60)
+        //         };
+        //     } else(parkingTime > 180 && receiptCost > 150000) {
+        //         return {
+        //             parkingCost = 2000 + ((parkingTime - 30) * 1000 / 60)
+        //         };
+        //     }
+        // }
+
+
+        // console.log(parkingCost)
+        // console.table(calParkingCost(20, 40000));
+
+
+        console.log("강사님 해답 주차요금")
+
+        function calParkingCost(parkingHours, purchaseAmount) {
+            //주말인지 평일 인지 구한당
+            const isWeekend = ((new Date()).getDay() % 6) == 0 ? true : false;
+            //사용자가 입력한 총입력한 주차 시간을 10분 단위로 바꾼다.
+            //var parkingMinutes = parkingHour * 60;
+
+            if (purchaseAmount >= 150000) {
+                parkingHours = parkingHours - 3;
+
+            } else if (purchaseAmount >= 100000) {
+                parkingHours = parkingHours - 2;
+            } else if (parkingHour >= 50000) {
+                parkingHours = parkingHours - 1;
+            }
+
+            if (parkingHours < 0) {
+                return 0;
+            } else {
+                var parkingMinutes = parkingHours * 60;
+
+                if (parkingHours <= 30) {
+                    return isWeekend ? 5000 : 2000;
+                } else {
+                    return (isWeekend ? 5000 : 2000) + ((parkingMinutes - 30) / 10) * (isWeekend ? 2000 : 1000);
+                }
+            }
+        }
+
+
+        console.table(calParkingCost(5, 100000));
+    </script>
+</body>
+
+</html>
