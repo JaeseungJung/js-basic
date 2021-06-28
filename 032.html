@@ -40,6 +40,108 @@
 
         //abs()
         console.log(Math.abs(-4.9)) // 무조건 양수 값으로 만듦.
+
+        //min() //max()
+        console.log(Math.min(-19, 2, 555)) //최솟값
+        console.log(Math.max(3, 6, 100)) //최댓값
+
+        //random()
+        console.log(Math.random()) // 실핼할때마다 무작위 숫자형 데이터가 나오며 // 0 보다 크고 1보다 작은 수.
+        console.log(Math.floor(Math.random() * 10));
+        console.log(Math.floor(Math.random() * 100) + 1);
+
+        function getRandomInteger(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // console.log(getRandomInteger(11, 20))
+
+
+
+        // 가위 바위 보 게임 만들기
+        //함수명 - rspPlayer
+        //파라미터는 1개 "가위" "바위" "보"
+        //const arrRsp = ["가위","바위","보"];
+        //random 함수를 써서 0~2까지 정수를 무작위로 나오게 해서... 이것을 arrRsp 배열에 인덱스 번호로 넣으면
+        //return은 - {userRsp:"", playerRsp:"", winner:"ture/false"} 
+
+        // // 0~2 랜덤 값 생성
+        // var ranNumRsp = Math.floor(Math.random() * 3); // 이렇게 하면 0이면 제일 많이 나옴. 코드 함정이 생깁니다. 쓰지 마세용.
+        // console.log(ranNumRsp)
+
+
+        // function rspPlayer() {
+        //     return
+        // }
+
+
+
+        // const arrRsp = ["가위", "바위", "보"];
+
+
+        // // console.log(getRandomInteger(0, 2))
+
+
+
+        // console.log(rspPlayer("가위"))
+
+
+        // 강사님 해답01
+        // function rspPlayer(userRsp) {
+        //     const rsp = ["가위", "바위", "보"];
+        //     const playerRsp = rsp[getRandomInteger(0, 2)];
+
+        //     if (userRsp == playerRsp) {
+        //         return {
+        //             "userRsp": userRsp,
+        //             "playerRsp": playerRsp,
+        //             "winner": 0
+        //         };
+
+        //     } else if (userRsp == "가위") {
+        //         if (playerRsp == "보") {
+        //             return {
+        //                 "userRsp": userRsp,
+        //                 "playerRsp": playerRsp,
+        //                 "winner": 1
+        //             };
+        //             else(userRsp == "가위") {
+        //                 if (playerRsp == "바위") {
+        //                     return {
+        //                         "userRsp": userRsp,
+        //                         "playerRsp": playerRsp,
+        //                         "winner": -1
+        //                     };
+        //                 }
+        //             }
+
+        //         }
+
+        //     }
+
+
+
+        // 강사님 해답02
+        function rspPlayer02(userRsp) {
+            const rsp = ["가위", "바위", "보"];
+            const playerRsp = rsp[getRandomInteger(0, 2)];
+            const winValue = {
+                "가위": "보",
+                "바위": "가위",
+                "보": "바위"
+            };
+
+
+            return {
+                "userRsp": userRsp,
+                "playerRsp": playerRsp,
+                "winner": (userRsp == playerRsp) ? 0 : (winValue[userRsp] == playerRsp) ? 1 : -1
+            }
+        }
+
+
+
+        console.table(rspPlayer02("가위"));
     </script>
 </body>
 
