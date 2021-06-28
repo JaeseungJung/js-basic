@@ -5,8 +5,50 @@
 </head>
 
 <body>
+
+    <script src="user_data.js"></script>
+    </script>
     <script>
+        // set을 사용하지 않는 경우 중복되지 않는 값을 추출 할때
+        // 첫번째 값을 기준으로 일치하는 경우 해당 키 값을 +1, 
+        //일치하지 않는 경우 일치하지 않는 키를 추가 하고 +1 하는 식
+
+        var oUser = {};
+
+        for (var user of userList) {
+            if (oUser[user.gender]) {
+                oUser[user.gender] += 1;
+
+            } else {
+                oUser[user.gender] = 1;
+
+            }
+        };
+
+        console.table(oUser);
+
+
+
+
+
+
         // set 객체
+        var arr = [];
+        // var arr = new array [];
+
+        arr.push(1);
+        arr.push(3);
+        console.table(arr);
+
+        var mySet = new set();
+        mySet.add(625);
+        mySet.add(558);
+        mySet.add(328);
+        mySet.add(625); // set에서는 같은 값은 또 추가가 되지 않습니다. 유일한 값만 넣습니다. 중복방지.
+
+        mySet.has(625);
+
+        console.table(mySet);
     </script>
 </body>
 
