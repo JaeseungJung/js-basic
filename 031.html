@@ -49,6 +49,65 @@
         mySet.has(625);
 
         console.table(mySet);
+
+
+
+
+        // Map
+        var myMap = new Map();
+        myMap.set("female", 1);
+        console.log(myMap.get("female"));
+
+        for (var user of userList) {
+            if (myMap.has[user.gender]) {
+                myMap.set[user.gender] += 1;
+
+            } else {
+                myMap.set[user.gender] = +1;
+
+            }
+        };
+
+        console.table(myMap);
+
+
+
+        myMap.forEach(functionv(value, key)) {}
+
+        // size 몇개의 키가 있는 지 확인
+
+
+        // Map 객체 이용
+        // userList에 있는 사용자 정보 중 age를 이용해서
+        // 각 연랭대별로 몇명의 사용자가 있는지 확인 하는 코드 작성
+        //20대 30대 40대
+        // 함수명 : getAgeGroup()
+        // return - 각 연령대 별로 몇명 있는지.
+
+
+        var getAgeGroup = {};
+        var "20대" = {};
+        var "30대" = {};
+        var "40대" = {};
+
+
+        for (var user of userList) {
+            if getAgeGroup[user.age] <= 29 {
+                var "20대" += 1;
+
+            }
+            if
+            else {
+                getAgeGroup[user.age] <= 39 {
+                    var "30대" += 1;
+                } else {
+                    var "30대" += 1;
+                }
+
+            }
+        };
+
+        console.table(getAgeGroup);
     </script>
 </body>
 
