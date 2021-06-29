@@ -5,8 +5,8 @@ function getPerson() {
         firstName: "John",
         lastName: "Doe",
         age: "37",
-        email: "john@gmail.com"
-        city: "Jeju-si"
+        email: "john@gmail.com",
+        city: "Jeju-si",
         country: "Republic of korea"
     };
 }
@@ -18,8 +18,9 @@ var person = getPerson();
 
 // 실무에서 자주 사용됨. 오브젝트 디스트럭쳐링
 var {
-    firstName,
-    lastName
+    age,
+    city
 } = getPerson();
-console.log(person.firstName);
-console.log(person.lastName);
+
+console.log(person.age);
+console.log(person.city);

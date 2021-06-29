@@ -15,3 +15,5 @@ var score = {
     // student: "John Doe"
     score: 95
 };
+
+console.log(score[type])
