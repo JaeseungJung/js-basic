@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Mock 서버
+        //postman 활용 
+
+        // Promise
+        const url = "https://9b9c83af-3817-455b-8300-a31252020c1b.mock.pstmn.io/getUserList"; // 포스트맨 mock 서버 url
+
+        var data = axios.get(url);
+        console.log(data); // Promise라고 뜸.
+    </script>
+</body>
+
+</html>

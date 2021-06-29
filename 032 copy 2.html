@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Java Script</title>
+    <title>주차요금 계산.</title>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         //get day
         // var parkingCost = {}
 
-
+        //나의 오답
         // function calParkingCost(parkingTime, receiptCost) {
         //     var parkingCost = {};
         //     if (parkingTime <= 30 && receiptCost < 50000) {
@@ -55,11 +55,12 @@
         // console.table(calParkingCost(20, 40000));
 
 
-        console.log("강사님 해답 주차요금") // 26.HTML
+        console.log("강사님 해답 주차요금") // 026.HTML
 
         function calParkingCost(parkingHours, purchaseAmount) {
             //주말인지, 평일인지 구한다.
             const isWeekend = ((new Date()).getDay() % 6) == 0 ? true : false;
+
             // const isWeekend = ((new Date()).getDay() == 0 || (new Date()).getDay() == 6)? true : false;
             //사용자가 입력한 총 주차 시간을 10분단위로 바꾼다.
             // var parkingMinutes = parkingHours * 60;
