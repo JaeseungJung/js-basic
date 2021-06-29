@@ -6,25 +6,34 @@
 
 <body>
     <!-- <button type="button" onclick="deleteItem();"> 삭제 </button> -->
+    <button type="button" onclick="reallyExit();">퇴근</button>
     <!-- 이런식으로 연결해서 사용합니다. -->
+
 
     <script>
         //window 객체 - 전역개체, Global 객체
         // window.alert("이것은 alert창입니다.");
-        alert("이것은 alert창입니다."); // 앞에 window. 빼도 작동합니다.
-
+        // alert("이것은 alert창입니다."); // 앞에 window. 빼도 작동합니다.
+        // alert("이제 곧 퇴근 시간 입니다. 고생하셨습니다.")
 
         // // confirm 확인 취소 창 뜹니다.
         // //window.confirm
         // if (confirm("정말 삭제하시겠습니까?")) {
         //     //삭제 로직
         // }
+        // confirm("정말 이해가십니까?")
 
         // function deleteItem() {
         //     if (confirm("정말 삭제하시겠습니까?")) {
         //         //삭제 로직
         //     }
         // }
+
+        function reallyExit() {
+            if (confirm("정말 퇴근 하시겠습니까?")) {
+
+            }
+        }
 
         // var pass = prompt("비밀번호를 입력하세용.");
         // console.log(pass);

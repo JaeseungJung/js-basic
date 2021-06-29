@@ -12,6 +12,7 @@ function getAgeGroup(user, keyAge) {
         //"24"
         //"36"
         var ageGroup = user.age.toString().charAt(0) + "0";
+        //charAt(0) 왼쪽에서 1번째(0) 수를 가져옴.
         //"20"
         //"20"
         //"30"
