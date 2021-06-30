@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script 온포커스</title>
+</head>
+
+<body>
+    <input type="text" id="" onfocus="javascript:console.log('포커스 이벤트발생')">
+    <!-- // javascript:로 바로 자바스크립트 작성 가능 -->
+    <input type="text" id="" onfocus="javascript:console.log('포커스 이벤트발생')">
+
+    <input type="text" id="txt" onfocus="">
+    <input type="text" id="txt" onblur="javascript:console.log('블러 이벤트 발생')">
+    <!-- // onblur빠져 나올때 -->
+
+
+
+    <script>
+        document.getElementById("txt").focus(); // 포커스가 들어간 상태로 시작하게 만듦.
+        // document.getElementById("btn").click(); // 강제 클릭
+    </script>
+</body>
+
+</html>
