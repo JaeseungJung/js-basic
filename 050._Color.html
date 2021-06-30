@@ -118,6 +118,10 @@
 
         function requestDrink(drinkId) {
             let drink = drinkList.filter(d => d.drinkId == drinkId)[0];
+            // 위 애로우 펑션은 for문으로도 작성할 수 있습니다.
+            // for문은 조건에 맞는 값을 찾아도 break가 없으면 끝까지 탐색합니다.
+            // break를 걸면 for문의 비효율성을 해결 할 수 있습니다.
+
             if (drink.stock > 0) {
                 if (total_input_amount >= drink.price) {
                     let changes = total_input_amount - drink.price;

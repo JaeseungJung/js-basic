@@ -22,9 +22,8 @@
         <option value="female">여자</option>
     </select>
 
-
-
     <button onclick="doSearch();">조회</button>
+
     <table>
         <thead>
             <tr>
@@ -33,6 +32,7 @@
                 <th>회사</th>
             </tr>
         </thead>
+
         <tbody id="tb"></tbody>
     </table>
 
@@ -42,7 +42,6 @@
     <script>
         // var selH = [];
         // var selH.push('<option value="male'  남자 < /option>)
-
 
 
         function doSearch() {
@@ -57,7 +56,7 @@
                     h.push('<tr>');
                 }
 
-                // console.log(h);
+                console.log(h);
 
                 document.getElementById("tb").innerHTML = h.join("");
             }
