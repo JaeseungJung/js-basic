@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>지하철 요금 계산</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+  </script>
+</head>
+
+<body>
+
+
+  <div class="col" style="border: 2px solid; width: 50%; margin-left: 50px; margin-top: 20px; background-color: rgb(206, 255, 255); align-content: center;
+    border-radius: 10px;">
+    <div class="row" style="margin-top: 20px; margin-left: 20px;">
+
+      <label for="start"> 출발역 <select id="start"></select> </label>
+      <label for="end">도착역 <select id="end"></select> </label>
+
+    </div>
+
+    <div>
+      <img class="img-fluid" style="width: 18%; margin-left: 50px; margin-top: 10px;"
+        src="https://image.flaticon.com/icons/png/512/1137/1137977.png" alt="subwayLogo">
+    </div>
+
+
+
+    <div>
+      <br> 연령 <label><input type="radio" name="group" value="ADULT" checked> 성인일반</label>
+      <label><input type="radio" name="group" value="YOUNG"> 청소년</label>
+      <label><input type="radio" name="group" value="CHILD"> 어린이</label>
+      <br>
+    </div>
+
+
+    <div style="background-color: rgb(89, 156, 255);">
+      <div style="margin-left: 20px;">
+
+        <button class="btn btn-light " onclick="calculate();">요금계산</button>
+        : &nbsp; <input type="text" name="" id="total_cost" value="0" readonly></span>
+      </div>
+    </div>
+
+    <div id="output"
+      style="width:100%;height:150px;overflow-y: auto;border:2px solid #222; background-color: rgb(152, 255, 143); margin-top: 4px; border-radius: 10px;">
+
+    </div>
+
+
+
+
+
+    <script>
+      const subwayList = ["영등포구구청역", "당산역", "합정역", "홍대입구역", "신촌역", "이대역", "아현역", "충정로역", "시청역", "을지로3가역", "을지로4가역",
+        "동대문역사문화공원역", "신당역", "상왕십리역", "왕십리역", "한양대역", "뚝섬역", "성수역", "건대입구역", "구의역", "강변역", "잠실나루역", "잠실역", "종합운동장역",
+        "삼성역", "선릉역", "역삼역", "강남역", "서초역", "방배역", "사당역", "낙성대역", "서울대입구역", "봉천역", "신림역", "신대방역", "구로디지털단지역", "대림역",
+        "신도림역", "문래역"
+      ];
+
+      const intervalDistance = 3170;
+
+      //성인일반 - 기본운임 : 10km 이내 - 1250원
+      //청소년 - 기본운임 : 10km 이내 - 720원
+      //어린이 - 기본운임 : 10km 이내 - 450원
+
+      //[추가운임]
+      //10~50km 이내 - 5km 마다 100원 추가
+      //50km 초가 - 8km 마다 100원 추가
+
+      //문제
+      //출발역, 도착역을 선택하고, (성인/청소년/어린이)를 선택한 후 조회 버튼을 클릭하면
+      //요금을 계산해서 화면에 보여준다.
+
+      //////
+
+
+      // 출발역 선택
+      // var startStation = subwayList. [0]
+      // console.log(subwayList.length) // 총길이
+      // console.log(subwayList[1]); // 1번째 인덱스 값 당산역.
+      // console.log(subwayList.indexOf("당산역")); // 당산역의 인덱스 값 불러옴.
+
+
+      //// 알고리즘 구상
+      //출발역이 어느 역인지 가져옵니다. document.getElementId("start").value
+      //도착역이 어느 역인지 가져옵니다. document.getElementId("end").value
+      //출발역과 도착역이 같은지 확인하고, 같으면 출발역과 도착역이 같다고 보여주고 요금 계산을 하지 않습니다.
+      //출발역과 도착역의 값을 역이름이 아닌 인덱스 번호로 만들면, 출발역과 도착역 사이의 몇개의 역이 있는지 알 수 있다.
+      // 출발역에서 도착역까지 몇개의 역이 있는지 계산합니다.
+      //도착역과 출발역 사이의 총 역수에 역마다 거리인 3170미터를 곱하여 총 이동시간을 계산합니다.
+      // 총 이동 거리가 10km 이내이면 기본 요금입니다. 기본요금은 성인인 경우 1250원, 청소년은 720원, 어린이는 450원 입니다.
+      // 이동 거리가 10km이내이면 성인이면 1250원
+      // 이동 거리가 10km이내이면 청소년이면 720원
+      // 이동 거리가 10km이내이면 어린이이면 720원　
+
+
+
+
+      function calculate() {
+        const start = document.getElementById("start").value;
+        const end = document.getElementById("end").value;
+        const type = document.querySelector("[name=group]:checked").value;
+        var output = document.getElementById("output");
+
+        if (start == end) {
+          return output.insertAdjacentHTML("beforeend",
+            `<p>출발역은 ${subwayList[start]}, 도착역은 ${subwayList[end]}입니다. 출발역과 도착역이 같습니다.</p>`);
+        }
+
+        var stationCount = 0;
+
+        if (parseInt(start) > parseInt(end)) {
+          stationCount = subwayList.length - parseInt(start) + parseInt(end);
+        } else {
+          stationCount = parseInt(end) - parseInt(start);
+        }
+
+
+        const distance = stationCount * intervalDistance; // 총 이동거리 도출.
+
+        const cost = calSubwayCost(distance, type);
+
+
+
+        output.insertAdjacentHTML("beforeend", `<p>출발역은 ${subwayList[start]}, 도착역은 ${subwayList[end]}입니다.</p>`);
+        output.insertAdjacentHTML("beforeend", `<p>총 ${stationCount}개의 역을 승차했고, 총거리는 ${distance}m입니다.</p>`);
+        output.insertAdjacentHTML("beforeend", `<p>총 요금은 ₩${cost}입니다.</p>`);
+        output.scrollTop = output.scrollHeight;
+        document.getElementById("total_cost").value = cost
+      }
+
+      function calSubwayCost(distance, type) {
+        const baseAmount = (type == "ADULT") ? 1250 : (type == "YOUNG") ? 720 : (type == "CHILD") ? 450 : 0;
+        if (distance <= 10000) {
+          return baseAmount;
+        } else if (distance <= 50000) {
+          return baseAmount + (Math.ceil((distance - 10000) / 5000) * 100); //Math.cel로 무조건 올림.
+        } else {
+          return baseAmount + ((40000 / 5000) * 100) + (Math.ceil((distance - 50000) / 8000) * 100);
+        }
+      }
+
+
+      // 도착역 선택
+      // var endStation = []
+
+      // 연령 선택
+
+
+      // 거리 계산
+      // var calDistance = []
+
+      // 요금 계산 // calCost
+
+
+
+
+
+      // function calCost =
+
+
+
+      // select에 지하철역 리스트 로드하기.
+      function loadSubways() {
+        var h = [];
+
+
+
+        // for ~ in 구문으로 index를 가져옵니다.
+        // h 배열을 선언합니다.
+        // h 배열에 html 언어로
+        // <option> ` ` </option>로 템플릿을 만들어서 넣어줍니다.
+        // ``는 백틱입니다.
+        // 위에서 h배열은 [ , , , , , ,] 이렇게 되어 있는데
+        // h.join을 통해서 콤마를 지운 상태로 만들어주고
+        // id값으로 엘리먼트를 호출한뒤 start, end 값에 위 값을 뿌려줍니다.
+        // 그럼 start, end select창에 선택 값으로 다 들어가게 됩니다.
+        for (var idx in subwayList) {
+          h.push(`<option value="${idx}">${subwayList[idx]}</option>`);
+        }
+        document.getElementById("start").innerHTML = h.join("");
+        document.getElementById("end").innerHTML = h.join("");
+        // console.log(h);
+      }
+
+      loadSubways();
+    </script>
+</body>
+
+</html>
