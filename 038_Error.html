@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Mock 서버
+        //postman 활용 
+
+
+        // Error
+        const url = "https://9b9c83af-3817-455b-8300-a31252020c1b.mock.pstmn.io/"; // 포스트맨 mock 서버 url
+
+
+        // try-catch
+        try {
+            console.log("콘솔에 출력");
+
+        } catch (error) {
+            console.log(error.name);
+            console.log(error.message);
+        }
+
+        var x = 0;
+        var y = 3;
+
+        console.log(x + y);
+
+
+
+        //강제로 에러 발생
+        try {
+            if (x == 0) {
+                throw "value is zero";
+            }
+        } catch (error) {
+            console.log(error);
+        } finally {
+            console.log("try/catch를 모두 실행한 후 반드시 실행하는 부분");
+        } // finally는 오류가 나든 나지 않든 코드 실행.
+    </script>
+</body>
+
+</html>

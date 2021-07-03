@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <input type="text" name="" id="txt01"> <br>
+    <input type="text" name="" id="txt02"> <br>
+
+    <p>ABC</p>
+    <p>DEF</p>
+    <h2>당신이 좋아하는 프로그램 언어는?</h2>
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="자바스크립트"> 자바스크립트
+    </label>
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="html"> HTML
+    </label>
+    <label for="">
+        <input type="checkbox" name="chk_interest" id="" value="css"> CSS
+    </label>
+
+
+    <div style="margin-top: 20px;"> 강사님 040.html 내용
+        <button onclick="myFunction"> 조회 </button>
+    </div>
+    <div style="margin-top: 20px;">
+        <button onclick="myFunction"> 조회02 </button>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <button onclick="myFunction(event);" id="btnSave" style="padding: 10px;"> 저장 </button>
+    </div>
+
+
+
+    <script>
+        function myFunction(e) {
+            // var btnEle = document.querySelector("#btnSave");
+            var btnEle = e.target;
+            console.log(e);
+
+            btnEle.disabled = true;
+
+            setTimeOut(function)() {
+                btnEle.disabled = false;
+            }, 2000);
+
+        var ele = document.getElementById("txt01");
+        // console.log(ele);
+
+        var ele = document.querySelector("#txt01")
+        // console.log(ele);
+
+
+        var txt01Value = ele.value;
+        console.log(txt01Value);
+
+        var ele02 = document.getElementById("txt02");
+        ele2.value = "가나다";
+
+
+        var pTag = document.getElementsByTagName("p");
+        console.log(pTag);
+
+        document.querySelectorAll("");
+
+        var chks = document.getElementsByName("chk_interest");
+        console.log(chks);
+
+        for (var chk of chks) {
+            if (chk.checked) {
+                console.log(chk.value);
+            }
+        }
+
+        var checkedItems = document.querySelectorAll("[name=chk_interest]:checked")
+        for (
+            for chk of chedckedItem) {
+            console.log(chk, value);
+
+
+            document.querrySelector("")
+
+            // document.getElementsByClassName
+
+            //
+
+        }
+    </script>
+</body>
+
+</html>

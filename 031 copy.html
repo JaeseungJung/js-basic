@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+
+    <script src="user_data.js"></script>
+    </script>
+    <script>
+        // Map 객체 이용
+        // userList에 있는 사용자 정보 중 age를 이용해서
+        // 각 연랭대별로 몇명의 사용자가 있는지 확인 하는 코드 작성
+        //20대 30대 40대
+        // 함수명 : getAgeGroup()
+        // return - 각 연령대 별로 몇명 있는지.
+
+
+        var getAgeGroup = {
+            "20UnderGroup": 0,
+            "20Group": 0,
+            "30Group": 0,
+            "40Group": 0,
+            "50OverGroup": 0
+        };
+        // getAgeGroup.push("20Group");
+        // getAgeGroup.push("30Group");
+        // getAgeGroup.push("40Group");
+        console.table(getAgeGroup);
+
+
+        for (var user of userList) {
+            if (user.age <= 19) {
+                getAgeGroup["20UnderGroup"] += 1;
+            } else if (user.age <= 29) {
+                getAgeGroup["20Group"] += 1;
+            } else if (user.age <= 39) {
+                getAgeGroup["30Group"] += 1;
+            } else if (user.age <= 49) {
+                getAgeGroup["40Group"] += 1;
+            } else {
+                getAgeGroup["50OverGroup"] += 1;
+            }
+        };
+
+        console.table(getAgeGroup);
+
+
+
+        // 강사님 해답
+
+        // function getAgeGroup02() {
+        //     let userAgeMap = new Map();
+
+        //     for (var user of userList) {
+        //         userAgeMap.set("20g", 0); // 20g 키 추가, 초기값 0으로 설정.
+        //         userAgeMap.set("30g", 0);
+        //         userAgeMap.set("40g", 0);
+
+        //         for (var user of userList) {
+        //             if (user.age >= 20 && user.age < 30) {
+        //                 userAgeMap.set("20g", userAgeMap.get("20g") + 1);
+        //             } else if (user.age >= 30 && user.age < 40) {
+        //                 userAgeMap.set("30g", userAgeMap.get("30g") + 1);
+        //             } else if (user.age >= 40) {
+        //                 userAgeMap.set("40g", userAgeMap.get("40g") + 1);
+
+        //             }
+        //             return getAgeGroup02;
+        //         }
+
+        //         console.log(getAgeGroup02());
+
+
+
+        // 강사님 다른 방법 map
+
+        function getAgeGroup03() {
+            let userAgeGroup = new Map();
+
+            for (var user of userList) {
+                //"25"
+                //"24"
+                //"36"
+                var ageGroup = user.age.toString().charAt(0) + "0";
+                //"20"
+                //"20"
+                //"30"
+
+                if (userAgeGroup.has(ageGroup)) {
+                    userAgeGroup.set(ageGroup, userAgeGroup.get(ageGroup) + 1);
+
+                } else {
+                    userAgeGroup.set(ageGroup, 1);
+                }
+            }
+
+            return userAgeGroup;
+        }
+
+
+        console.log(getAgeGroup03());
+    </script>
+</body>
+
+</html>

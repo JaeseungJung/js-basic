@@ -5,7 +5,21 @@
 </head>
 
 <body>
+    <!-- // 절대경로 서버 호출 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+        integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- //다운로드 하는 방법 -->
+    <!-- <script src="scripts/moment.min.js"></script> -->
+
     <script>
+        // CDN 활용
+        console.log(moment() / subtract(5, "days".format("YYYY-MM-DD")));
+
+
+
+
         // Date()
         // var d = new Date(2020, 5, 24, 13,23,12,000);
         // console.log(d.getFullYear());
@@ -43,9 +57,11 @@
         console.log(d);
 
         var year = d.getFullYear();
-        console.log("year", year)
+        d.setFullYear(2020) // 고급 문법 d.setFullyear(2020)
+        // console.log("year", year)
 
         var month = d.getMonth();
+        //d.setMonth(6) // 7월로 설정
         console.log("month", month) // 현재 6월이지만 5로 출력됨.
 
         const monthName = ["Jan", "Feb", "March", "April", "May", "June"]
@@ -55,6 +71,8 @@
         console.log("hour", hour);
 
         var minute = d.getMinutes();
+        // d.setMinutes()
+
         console.log("minutes", minute);
 
         var second = d.getSeconds();

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script Window 객체</title>
+</head>
+
+<body>
+    <!-- <button type="button" onclick="deleteItem();"> 삭제 </button> -->
+    <button type="button" onclick="reallyExit();">퇴근</button>
+    <!-- 이런식으로 연결해서 사용합니다. -->
+
+
+    <script>
+        //window 객체 - 전역개체, Global 객체
+        // window.alert("이것은 alert창입니다.");
+        // alert("이것은 alert창입니다."); // 앞에 window. 빼도 작동합니다.
+        // alert("이제 곧 퇴근 시간 입니다. 고생하셨습니다.")
+
+        // // confirm 확인 취소 창 뜹니다.
+        // //window.confirm
+        // if (confirm("정말 삭제하시겠습니까?")) {
+        //     //삭제 로직
+        // }
+        // confirm("정말 이해가십니까?")
+
+        // function deleteItem() {
+        //     if (confirm("정말 삭제하시겠습니까?")) {
+        //         //삭제 로직
+        //     }
+        // }
+
+        function reallyExit() {
+            if (confirm("정말 퇴근 하시겠습니까?")) {
+
+            }
+        }
+
+        // var pass = prompt("비밀번호를 입력하세용.");
+        // console.log(pass);
+        // if (pass == null) {
+        //     //취소 버튼 누른 경우
+        // } else if (pass == "") {
+        //     // 공란 일경우
+
+        // } else if (pass != "") {
+        //     //아니면 콘솔에서 로그 출력  
+        //     console.log(pass);
+        // }
+
+        //오픈은 그냥 open으로도 쓸 수 있지만 통상적으로 앞에 window.를 붙입니다. //통상적인 약속입니다.
+        // window.open("https://www.naver.com/");
+
+
+        //setTimeout()
+        // 밀리 세컨드 이후 실행
+
+        // setTimeout(function () {
+        //     alert("프로그램 실행");
+        // }, 200);
+
+
+
+        //setInterval
+        // 예전 주식 가격 새로고침 기능으로 사용되었습니다.
+        var count = 0;
+
+        var fnc = setInterval(function () {
+            if (count < 5) {
+                console.log("인터벌 프로그램 실행:" + count);
+                count++;
+            } else {
+                console.log("종료");
+                clearInterval(fnc);
+            }
+        }, 1000);
+
+        //clearInterval
+    </script>
+</body>
+
+</html>

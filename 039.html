@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        // Mock 서버
+        //postman 활용 
+
+
+        // Async - await
+        const url = "https://9b9c83af-3817-455b-8300-a31252020c1b.mock.pstmn.io/"; // 포스트맨 mock 서버 url
+
+        async function api(url) {
+            return (await axios.get(url)).data;
+            console.log(path, data);
+        }
+
+        async function getdata(path) {
+            var data = (await api(url + path));
+            console.log(path, data);
+        }
+
+        getdata("getUserList");
+        getdata("getDrinkList");
+    </script>
+</body>
+
+</html>

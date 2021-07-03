@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<head>
+    <title>주차요금 계산.</title>
+</head>
+
+<body>
+    https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2202C847545F45BC25
+    <script>
+        // 주차 요금 계산.
+        // 평일만
+        // 패러미터
+        // 상품구매금액 / 내야할 주차요금
+        //함수명 calParkingCost(주차시간,총구매금액)
+        //new Date()
+        //get day
+        // var parkingCost = {}
+
+        //나의 오답
+        // function calParkingCost(parkingTime, receiptCost) {
+        //     var parkingCost = {};
+        //     if (parkingTime <= 30 && receiptCost < 50000) {
+        //         return {
+        //             parkingCost = 2000
+        //         };
+        //     } else if (parkingTime <= 60 && receiptCost >= 50000) {
+        //         return {
+        //             parkingCost = 0
+        //         };
+        //     } else if (parkingTime <= 120 && receiptCost >= 100000) {
+        //         return {
+        //             parkingCost = 0
+        //         };
+        //     } else if (parkingTime <= 180 && receiptCost >= 150000) {
+        //         return {
+        //             parkingCost = 0
+        //         }; //////
+        //     } else if (parkingTime > 60 && receiptCost > 50000) {
+        //         return {
+        //             parkingCost = 2000 + ((parkingTime - 30) * 1000 / 60)
+        //         };
+        //     } else if (parkingTime > 120 && receiptCost > 100000) {
+        //         return {
+        //             parkingCost = 2000 + ((parkingTime - 30) * 1000 / 60)
+        //         };
+        //     } else(parkingTime > 180 && receiptCost > 150000) {
+        //         return {
+        //             parkingCost = 2000 + ((parkingTime - 30) * 1000 / 60)
+        //         };
+        //     }
+        // }
+
+
+        // console.log(parkingCost)
+        // console.table(calParkingCost(20, 40000));
+
+
+        console.log("강사님 해답 주차요금") // 026.HTML
+
+        function calParkingCost(parkingHours, purchaseAmount) {
+            //주말인지, 평일인지 구한다.
+            const isWeekend = ((new Date()).getDay() % 6) == 0 ? true : false;
+
+            // const isWeekend = ((new Date()).getDay() == 0 || (new Date()).getDay() == 6)? true : false;
+            //사용자가 입력한 총 주차 시간을 10분단위로 바꾼다.
+            // var parkingMinutes = parkingHours * 60;
+
+
+            if (purchaseAmount >= 150000) {
+                parkingHours = parkingHours - 3;
+            } else if (purchaseAmount >= 100000) {
+                parkingHours = parkingHours - 2;
+            } else if (purchaseAmount >= 50000) {
+                parkingHours = parkingHours - 1;
+            }
+
+
+
+            if (parkingHours <= 0) {
+                return 0;
+            } else {
+                var parkingMinutes = parkingHours * 60; //120
+
+                if (parkingMinutes <= 30) {
+                    return isWeekend ? 5000 : 2000;
+                } else {
+                    //60분 - 30분 2000원 + 30/10*1000
+                    //120분 - 30분 , 90/10*1000
+                    return (isWeekend ? 5000 : 2000) + ((parkingMinutes - 30) / 10) * (isWeekend ? 2000 : 1000);
+                }
+            }
+        }
+
+        console.log(calParkingCost(5, 100000));
+        // 5시간일 경우 2시간 무료, 3시간에대한 주차요금 계산 
+        // 최초 30분은 2천원. 180분중 30분은 무료
+        //150분에 대한 요금은? 15*1000=15000
+        //최종 주차요금 15000+2000=17000원
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Java Script</title>
+
+    <style>
+        table,
+        th,
+        td {
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <select id="sel_gender">
+        <option value="male">남자</option>
+        <option value="female">여자</option>
+    </select>
+
+    <button onclick="doSearch();">조회</button>
+
+    <table>
+        <thead>
+            <tr>
+                <th>이름</th>
+                <th>성별</th>
+                <th>회사</th>
+            </tr>
+        </thead>
+
+        <tbody id="tb"></tbody>
+    </table>
+
+
+
+    <script src="user_data.js"></script>
+    <script>
+        // var selH = [];
+        // var selH.push('<option value="male'  남자 < /option>)
+
+
+        function doSearch() {
+            var gender = document.getElementById("sel_gender").value;
+            var h = [];
+            for (var user of userList) {
+                if (gender === user.gender) {
+                    h.push('<tr>');
+                    h.push('<td>' + user.name + '</td>');
+                    h.push('<td>' + user.gender + '</td>');
+                    h.push('<td>' + user.company + '</td>');
+                    h.push('<tr>');
+                }
+
+                console.log(h);
+
+                document.getElementById("tb").innerHTML = h.join("");
+            }
+        }
+    </script>
+</body>
+
+</html>
